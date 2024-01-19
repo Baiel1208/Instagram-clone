@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon -->
-    <link href="static/assets/images/favicon.png" rel="icon" type="image/png">
+    <link href="{% static 'assets/images/favicon.png' %}" rel="icon" type="image/png">
 
     <!-- title and description-->
     <title>Instello</title>
     <meta name="description" content="Instello - Sharing Photos platform HTML Template">
    
     <!-- Syntax Highlighter -->
-    <link rel="stylesheet" type="text/css" href="static/assets/syntax-highlighter/styles/shCore.css" media="all">
-    <link rel="stylesheet" type="text/css" href="static/assets/syntax-highlighter/styles/shCoreMidnight.css" media="all">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/syntax-highlighter/styles/shCore.css' %}" media="all">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/syntax-highlighter/styles/shCoreMidnight.css' %}" media="all">
   
       
     <!-- css files -->
-    <link rel="stylesheet" href="static/assets/css/tailwind.css">
-    <link rel="stylesheet" href="static/assets/css/style.css">
+    <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -116,11 +118,11 @@
                     <a href="home.html" id="logo" class="flex items-center gap-3">
 
                         <!-- logo icon -->
-                        <img id="logo__icon" src="static/assets/images/logo-icon.png" alt="" class="md:w-8 hidden text-2xl max-xl:!block max-md:!hidden shrink-0 uk-animation-scale-up">
+                        <img id="logo__icon" src="{% static 'assets/images/logo-icon.png' %}" alt="" class="md:w-8 hidden text-2xl max-xl:!block max-md:!hidden shrink-0 uk-animation-scale-up">
 
                         <!-- text logo -->
-                        <img id="logo__text" src="static/assets/images/logo.svg" alt="" class="w-full h-6 ml-1 max-xl:hidden max-md:block dark:!hidden">
-                        <img id="logo__text" src="static/assets/images/logo-dark.svg" alt="" class="w-full h-6 ml-1 !hidden max-xl:!hidden max-md:block dark:max-md:!block dark:!block">
+                        <img id="logo__text" src="{% static 'assets/images/logo.svg' %}" alt="" class="w-full h-6 ml-1 max-xl:hidden max-md:block dark:!hidden">
+                        <img id="logo__text" src="{% static 'assets/images/logo-dark.svg' %}" alt="" class="w-full h-6 ml-1 !hidden max-xl:!hidden max-md:block dark:max-md:!block dark:!block">
                       
                     </a>
                 </div>
@@ -129,7 +131,7 @@
                 <nav class="flex-1 max-md:flex max-md:justify-around md:space-y-2">
 
                     <!-- Home -->
-                    <a href="home.html">
+                    <a href="{% url "home" %}" class="active">
                         <svg id="icon__outline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                         </svg>
@@ -146,7 +148,7 @@
                         </svg>
                         <span class="max-xl:hidden"> Search </span>
                     </a>  
-                    <div class="sm:w-[397px] w-full bg-white shadow-lg md:!left-[73px] hidden !left-0 dark:bg-dark2 dark:border1 max-md:bottom-[57px]" uk-drop="pos: left-center;animate-out: true; animation: uk-animation-slide-left-medium; mode:click; offset: 9"> 
+                    <div class="sm:w-[397px] w-full bg-white shadow-lg md:!left-[73px] hidden !left-0 dark:bg-dark2 dark:border1 max-md:bottom-[57px]" uk-drop="animation: uk-animation-slide-left-small , uk-transform-origin-center-left ;animate-out: true; pos: left ; mode:click; offset: 9"> 
                         <div class="md:h-screen overflow-y-auto h-[calc(100vh-120px)]">
 
                             <!-- header -->
@@ -170,15 +172,15 @@
                                     <button type="button" class="text-blue-500 text-sm">Clear all</button>
                                 </div>
 
-                                <a href="profile.html" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
-                                    <img src="static/assets/images/avatars/avatar-2.jpg" alt="" class="bg-gray-200 rounded-full w-10 h-10">
+                                <a href="{% url "profile" %}" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
+                                    <img src="{% static 'assets/images/avatars/avatar-2.jpg' %}" alt="" class="bg-gray-200 rounded-full w-10 h-10">
                                     <div class="fldex-1 min-w-0">
                                         <h4 class="font-medium text-sm text-black dark:text-white">  Johnson smith </h4>
                                         <div class="text-xs text-gray-500 font-normal mt-0.5 dark:text-white-80"> Suggested For You </div>
                                     </div> 
                                 </a>
-                                <a href="profile.html" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
-                                    <img src="static/assets/images/avatars/avatar-5.jpg" alt="" class="bg-gray-200 rounded-full w-10 h-10">
+                                <a href="{% url "profile" %}" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
+                                    <img src="{% static 'assets/images/avatars/avatar-5.jpg' %}" alt="" class="bg-gray-200 rounded-full w-10 h-10">
                                     <div class="flex-1 min-w-0">
                                         <h4 class="font-medium text-sm text-black dark:text-white"> James Lewis </h4>
                                         <div class="text-xs text-gray-500 font-normal mt-0.5 dark:text-white-80"> Followed By Johnson </div>
@@ -186,7 +188,7 @@
                                     <button type="button" class="text-sm rounded-full py-1.5 px-4 font-semibold bg-secondery"> Follow </button> 
                                 </a>
  
-                                <a href="profile.html" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery"> 
+                                <a href="{% url "profile" %}" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery"> 
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="border border-gray-200 p-2.5 rounded-full w-9 h-9 fill-black">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
                                     </svg>
@@ -196,23 +198,23 @@
                                     </div> 
                                 </a>
 
-                                <a href="profile.html" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
-                                    <img src="static/assets/images/avatars/avatar-3.jpg" alt="" class="bg-gray-200 rounded-full w-10 h-10">
+                                <a href="{% url "profile" %}" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
+                                    <img src="{% static 'assets/images/avatars/avatar-3.jpg' %}" alt="" class="bg-gray-200 rounded-full w-10 h-10">
                                     <div class="fldex-1 min-w-0">
                                         <h4 class="font-medium text-sm text-black dark:text-white">  Monroe Parker </h4>
                                         <div class="text-xs text-gray-500 font-normal mt-0.5 dark:text-white-80"> Parker . following </div>
                                     </div> 
                                 </a>
 
-                                <a href="profile.html" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
-                                    <img src="static/assets/images/avatars/avatar-7.jpg" alt="" class="bg-gray-200 rounded-full w-10 h-10">
+                                <a href="{% url "profile" %}" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
+                                    <img src="{% static 'assets/images/avatars/avatar-7.jpg' %}" alt="" class="bg-gray-200 rounded-full w-10 h-10">
                                     <div class="fldex-1 min-w-0">
                                         <h4 class="font-medium text-sm text-black dark:text-white">  Johnson smith </h4>
                                         <div class="text-xs text-gray-500 font-normal mt-0.5 dark:text-white-80"> Suggested For You </div>
                                     </div> 
                                 </a>
-                                <a href="profile.html" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
-                                    <img src="static/assets/images/avatars/avatar-4.jpg" alt="" class="bg-gray-200 rounded-full w-10 h-10">
+                                <a href="{% url "profile" %}" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
+                                    <img src="{% static 'assets/images/avatars/avatar-4.jpg' %}" alt="" class="bg-gray-200 rounded-full w-10 h-10">
                                     <div class="flex-1 min-w-0">
                                         <h4 class="font-medium text-sm text-black dark:text-white"> James Lewis </h4>
                                         <div class="text-xs text-gray-500 font-normal mt-0.5 dark:text-white-80"> Followed By Johnson </div>
@@ -220,7 +222,7 @@
                                     <button type="button" class="text-sm rounded-full py-1.5 px-4 font-semibold bg-secondery"> Follow </button> 
                                 </a>
                                 
-                                <a href="profile.html" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery"> 
+                                <a href="{% url "profile" %}" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery"> 
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="border border-gray-200 p-2.5 rounded-full w-9 h-9 fill-black">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
                                     </svg>
@@ -230,7 +232,7 @@
                                     </div> 
                                 </a> 
                                 
-                                <a href="profile.html" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery"> 
+                                <a href="{% url "profile" %}" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery"> 
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="border border-gray-200 p-2.5 rounded-full w-9 h-9 fill-black">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
                                     </svg>
@@ -240,15 +242,15 @@
                                     </div> 
                                 </a>
 
-                                <a href="profile.html" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
-                                    <img src="static/assets/images/avatars/avatar-2.jpg" alt="" class="bg-gray-200 rounded-full w-10 h-10">
+                                <a href="{% url "profile" %}" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
+                                    <img src="{% static 'assets/images/avatars/avatar-2.jpg' %}" alt="" class="bg-gray-200 rounded-full w-10 h-10">
                                     <div class="fldex-1 min-w-0">
                                         <h4 class="font-medium text-sm text-black dark:text-white">  Johnson smith </h4>
                                         <div class="text-xs text-gray-500 font-normal mt-0.5 dark:text-white-80"> Suggested For You </div>
                                     </div> 
                                 </a>
-                                <a href="profile.html" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
-                                    <img src="static/assets/images/avatars/avatar-5.jpg" alt="" class="bg-gray-200 rounded-full w-10 h-10">
+                                <a href="{% url "profile" %}" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
+                                    <img src="{% static 'assets/images/avatars/avatar-5.jpg' %}" alt="" class="bg-gray-200 rounded-full w-10 h-10">
                                     <div class="flex-1 min-w-0">
                                         <h4 class="font-medium text-sm text-black dark:text-white"> James Lewis </h4>
                                         <div class="text-xs text-gray-500 font-normal mt-0.5 dark:text-white-80"> Followed By Johnson </div>
@@ -263,7 +265,7 @@
                     </div> 
 
                     <!-- Explore -->
-                    <a href="explore.html" class="max-md:!hidden">
+                    <a href="{% url "explore" %}" class="max-md:!hidden">
                         <svg id="icon__outline" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-compass" viewBox="0 0 16 16">
                             <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
                             <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z"/>
@@ -274,7 +276,7 @@
                         <span  class="max-xl:hidden"> Explore </span>
                     </a>  
 
-                    <a href="messages.html"  class="max-md:!fixed max-md:top-2 max-md:right-2">
+                    <a href="{% url "messages" %}"  class="max-md:!fixed max-md:top-2 max-md:right-2">
                         <svg id="icon__outline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
                         </svg>
@@ -285,7 +287,7 @@
                     </a>
                     
                     <!-- reels -->
-                    <a href="reels.html">
+                    <a href="{% url "reels" %}">
                         <svg id="icon__outline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 7.5l16.5-4.125M12 6.75c-2.708 0-5.363.224-7.948.655C2.999 7.58 2.25 8.507 2.25 9.574v9.176A2.25 2.25 0 004.5 21h15a2.25 2.25 0 002.25-2.25V9.574c0-1.067-.75-1.994-1.802-2.169A48.329 48.329 0 0012 6.75zm-1.683 6.443l-.005.005-.006-.005.006-.005.005.005zm-.005 2.127l-.005-.006.005-.005.005.005-.005.005zm-2.116-.006l-.005.006-.006-.006.005-.005.006.005zm-.005-2.116l-.006-.005.006-.005.005.005-.005.005zM9.255 10.5v.008h-.008V10.5h.008zm3.249 1.88l-.007.004-.003-.007.006-.003.004.006zm-1.38 5.126l-.003-.006.006-.004.004.007-.006.003zm.007-6.501l-.003.006-.007-.003.004-.007.006.004zm1.37 5.129l-.007-.004.004-.006.006.003-.004.007zm.504-1.877h-.008v-.007h.008v.007zM9.255 18v.008h-.008V18h.008zm-3.246-1.87l-.007.004L6 16.127l.006-.003.004.006zm1.366-5.119l-.004-.006.006-.004.004.007-.006.003zM7.38 17.5l-.003.006-.007-.003.004-.007.006.004zm-1.376-5.116L6 12.38l.003-.007.007.004-.004.007zm-.5 1.873h-.008v-.007h.008v.007zM17.25 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zm0 4.5a.75.75 0 110-1.5.75.75 0 010 1.5z" />
                         </svg>
@@ -332,7 +334,7 @@
                                 </div>
 
                                 <a href="#" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
-                                    <div class="relative w-12 h-12 shrink-0"> <img src="static/assets/images/avatars/avatar-2.jpg" alt="" class="object-cover w-full h-full rounded-full"></div>
+                                    <div class="relative w-12 h-12 shrink-0"> <img src="{% static 'assets/images/avatars/avatar-2.jpg' %}" alt="" class="object-cover w-full h-full rounded-full"></div>
                                     <div class="flex-1 "> 
                                         <p> <b class="font-bold mr-1"> John Michael</b> who you might know,  is on Instello.</p>
                                         <div class="text-xs text-gray-500 mt-1.5 dark:text-white/80"> 2 hours ago </div>
@@ -340,7 +342,7 @@
                                     <button type="button" class="button text-white bg-primary">fallow</button>
                                 </a>
                                 <a href="#" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl pr-10 hover:bg-secondery bg-teal-500/5">
-                                    <div class="relative w-12 h-12 shrink-0"> <img src="static/assets/images/avatars/avatar-3.jpg" alt="" class="object-cover w-full h-full rounded-full"></div>
+                                    <div class="relative w-12 h-12 shrink-0"> <img src="{% static 'assets/images/avatars/avatar-3.jpg' %}" alt="" class="object-cover w-full h-full rounded-full"></div>
                                     <div class="flex-1 ">
                                         <p> <b class="font-bold mr-1"> Alexa Gray</b> started following you. Welcome him to your profile. 👋 </p>
                                         <div class="text-xs text-gray-500 mt-1.5 dark:text-white/80"> 4 hours ago </div>
@@ -348,7 +350,7 @@
                                     </div>
                                 </a>
                                 <a href="#" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl pr-10 hover:bg-secondery">
-                                    <div class="relative w-12 h-12 shrink-0"> <img src="static/assets/images/avatars/avatar-7.jpg" alt="" class="object-cover w-full h-full rounded-full"></div>
+                                    <div class="relative w-12 h-12 shrink-0"> <img src="{% static 'assets/images/avatars/avatar-7.jpg' %}" alt="" class="object-cover w-full h-full rounded-full"></div>
                                     <div class="flex-1 ">
                                         <p> <b class="font-bold mr-1">Jesse Steeve</b> mentioned you in a story. Check it out and reply. 📣 </p>
                                         <div class="text-xs text-gray-500 mt-1.5 dark:text-white/80"> 8 hours ago </div> 
@@ -362,14 +364,14 @@
 
                                
                                 <a href="#" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
-                                    <div class="relative w-12 h-12 shrink-0"> <img src="static/assets/images/avatars/avatar-4.jpg" alt="" class="object-cover w-full h-full rounded-full"></div>
+                                    <div class="relative w-12 h-12 shrink-0"> <img src="{% static 'assets/images/avatars/avatar-4.jpg' %}" alt="" class="object-cover w-full h-full rounded-full"></div>
                                     <div class="flex-1 ">
                                         <p> <b class="font-bold mr-1"> Jesse Steeve</b> sarah tagged you <br> in a photo of your birthday party. 📸 </p>
                                         <div class="text-xs text-gray-500 mt-1.5 dark:text-white/80"> 8 hours ago </div>
                                     </div> 
                                 </a>
                                 <a href="#" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl pr-10 hover:bg-secondery bg-teal-500/5">
-                                    <div class="relative w-12 h-12 shrink-0"> <img src="static/assets/images/avatars/avatar-3.jpg" alt="" class="object-cover w-full h-full rounded-full"></div>
+                                    <div class="relative w-12 h-12 shrink-0"> <img src="{% static 'assets/images/avatars/avatar-3.jpg' %}" alt="" class="object-cover w-full h-full rounded-full"></div>
                                     <div class="flex-1 ">
                                         <p> <b class="font-bold mr-1"> Sarah Gray</b> sent you a message. He wants to chat with you. 💖 </p>
                                         <div class="text-xs text-gray-500 mt-1.5 dark:text-white/80"> 4 hours ago </div>
@@ -377,7 +379,7 @@
                                     </div>
                                 </a>
                                 <a href="#" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
-                                    <div class="relative w-12 h-12 shrink-0"> <img src="static/assets/images/avatars/avatar-4.jpg" alt="" class="object-cover w-full h-full rounded-full"></div>
+                                    <div class="relative w-12 h-12 shrink-0"> <img src="{% static 'assets/images/avatars/avatar-4.jpg' %}" alt="" class="object-cover w-full h-full rounded-full"></div>
                                     <div class="flex-1 ">
                                         <p> <b class="font-bold mr-1"> James Lewis</b> Start following you on instello </p>
                                         <div class="text-xs text-gray-500 mt-1.5 dark:text-white/80"> 8 hours ago </div>
@@ -385,21 +387,21 @@
                                     <button type="button" class="button bg-primary-soft text-primary">fallowing</button>
                                 </a>
                                 <a href="#" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl pr-10 hover:bg-secondery">
-                                    <div class="relative w-12 h-12 shrink-0"> <img src="static/assets/images/avatars/avatar-6.jpg" alt="" class="object-cover w-full h-full rounded-full"></div>
+                                    <div class="relative w-12 h-12 shrink-0"> <img src="{% static 'assets/images/avatars/avatar-6.jpg' %}" alt="" class="object-cover w-full h-full rounded-full"></div>
                                     <div class="flex-1 ">
                                         <p> <b class="font-bold mr-1"> Alexa stella</b> commented on your photo  “Wow, stunning shot!” 💬 </p>
                                         <div class="text-xs text-gray-500 mt-1.5 dark:text-white/80"> 8 hours ago </div> 
                                     </div>
                                 </a>
                                 <a href="#" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl pr-10 hover:bg-secondery">
-                                    <div class="relative w-12 h-12 shrink-0"> <img src="static/assets/images/avatars/avatar-2.jpg" alt="" class="object-cover w-full h-full rounded-full"></div>
+                                    <div class="relative w-12 h-12 shrink-0"> <img src="{% static 'assets/images/avatars/avatar-2.jpg' %}" alt="" class="object-cover w-full h-full rounded-full"></div>
                                     <div class="flex-1 ">
                                         <p> <b class="font-bold mr-1"> John Michael</b> mentioned you in a story. Check it out and reply. 📣 </p>
                                         <div class="text-xs text-gray-500 mt-1.5 dark:text-white/80"> 8 hours ago </div> 
                                     </div>
                                 </a> 
                                 <a href="#" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl hover:bg-secondery">
-                                    <div class="relative w-12 h-12 shrink-0"> <img src="static/assets/images/avatars/avatar-5.jpg" alt="" class="object-cover w-full h-full rounded-full"></div>
+                                    <div class="relative w-12 h-12 shrink-0"> <img src="{% static 'assets/images/avatars/avatar-5.jpg' %}" alt="" class="object-cover w-full h-full rounded-full"></div>
                                     <div class="flex-1 ">
                                         <p> <b class="font-bold mr-1"> Jesse Steeve</b> who you might know,  is on Instello. </p>
                                         <div class="text-xs text-gray-500 mt-1.5 dark:text-white/80"> 8 hours ago </div>
@@ -407,7 +409,7 @@
                                     <button type="button" class="button text-white bg-primary">fallow</button>
                                 </a>
                                 <a href="#" class="relative flex items-center gap-3 p-2 duration-200 rounded-xl pr-10 hover:bg-secondery">
-                                    <div class="relative w-12 h-12 shrink-0"> <img src="static/assets/images/avatars/avatar-7.jpg" alt="" class="object-cover w-full h-full rounded-full"></div>
+                                    <div class="relative w-12 h-12 shrink-0"> <img src="{% static 'assets/images/avatars/avatar-7.jpg' %}" alt="" class="object-cover w-full h-full rounded-full"></div>
                                     <div class="flex-1 ">
                                         <p> <b class="font-bold mr-1"> Martin Gray</b> liked your photo of the Eiffel Tower. 😍 </p>
                                         <div class="text-xs text-gray-500 mt-1.5 dark:text-white/80"> 8 hours ago </div> 
@@ -421,7 +423,7 @@
 
 
                     <!-- marketplace -->
-                    <a href="shop.html">
+                    <a href="{% url "shop" %}">
                         <svg id="icon__outline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
                         </svg>
@@ -432,7 +434,7 @@
                     </a>
 
                     <!-- peaple -->
-                    <a href="peaple.html" class="max-md:!hidden">
+                    <a href="{% url "peaple" %}" class="max-md:!hidden">
                         <svg id="icon__outline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                         </svg>
@@ -455,7 +457,7 @@
                     </a>
                     
                     <!-- components -->
-                    <a href="components.html" class="max-md:!hidden active">
+                    <a href="{% url "components" %}" class="max-md:!hidden">
                         <svg id="icon__outline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 6.878V6a2.25 2.25 0 012.25-2.25h7.5A2.25 2.25 0 0118 6v.878m-12 0c.235-.083.487-.128.75-.128h10.5c.263 0 .515.045.75.128m-12 0A2.25 2.25 0 004.5 9v.878m13.5-3A2.25 2.25 0 0119.5 9v.878m0 0a2.246 2.246 0 00-.75-.128H5.25c-.263 0-.515.045-.75.128m15 0A2.25 2.25 0 0121 12v6a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 18v-6c0-.98.626-1.813 1.5-2.122" />
                         </svg>
@@ -465,7 +467,7 @@
                         <span  class="max-xl:hidden"> components </span>
                     </a>
 
-                    <a href="profile.html" class="max-md:!hidden">
+                    <a href="{% url "profile" %}" class="max-md:!hidden">
                         
                         <svg id="icon__outline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -481,7 +483,7 @@
                 <!-- profile -->
                 <div >
                     <a id="profile-link" class="flex items-center gap-3 p-3 group">
-                        <img src="static/assets/images/avatars/avatar-7.jpg" alt="" class="rounded-full md:w-7 md:h-7 w-5 h-5 shrink-0">
+                        <img src="{% static 'assets/images/avatars/avatar-7.jpg' %}" alt="" class="rounded-full md:w-7 md:h-7 w-5 h-5 shrink-0">
                         <span class="font-semibold text-sm max-xl:hidden">  Monroe Parker </span>
                         <ion-icon name="chevron-forward-outline"  class="text-xl ml-auto duration-200 group-aria-expanded:-rotate-90 max-xl:hidden"></ion-icon>
                     </a>
@@ -491,7 +493,7 @@
  
                         <div class="p-4 text-xs font-medium">
                             <a href="profile.html">
-                                <img src="static/assets/images/avatars/avatar-3.jpg" class="w-8 h-8 rounded-full" alt="">
+                                <img src="{% static 'assets/images/avatars/avatar-3.jpg' %}" class="w-8 h-8 rounded-full" alt="">
                                 <div class="mt-2 space-y-0.5">
                                     <div class="text-base font-semibold"> Monroe Parker </div>
                                     <div class="text-gray-400 dark:text-white/80"> @monroe </div>
@@ -621,8 +623,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -736,8 +738,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -854,8 +856,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1023,8 +1025,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1076,8 +1078,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1133,8 +1135,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1212,8 +1214,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1270,8 +1272,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1399,8 +1401,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1477,8 +1479,8 @@
                                          
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1565,8 +1567,8 @@
 
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1610,7 +1612,7 @@
                                         <div class="relative z-20 flex justify-center py-10">
         
                                             <div uk-lightbox="">
-                                                <a  href="static/assets/images/avatars/avatar-lg-3.jpg"
+                                                <a  href="{% static 'assets/images/avatars/avatar-lg-3.jpg' %}"
                                                     class="px-4 py-2 mb-3 text-sm bg-white shadow rounded-md dark:text-white dark:bg-gray-700"
                                                     data-caption="Caption"> 
 
@@ -1623,8 +1625,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1658,21 +1660,21 @@
                                         
                                         <div class="grid sm:grid-cols-2 gap-10" uk-lightbox="">
                                           <div>
-                                              <a class="uk-inline" href="static/assets/images/demos/photo2.jpg" data-caption="Caption 1">
-                                                  <img src="static/assets/images/demos/photo2.jpg" alt="" class="shadow rounded-md w-full h-full object-cover">
+                                              <a class="uk-inline" href="{% static 'assets/images/demos/photo2.jpg' %}" data-caption="Caption 1">
+                                                  <img src="{% static 'assets/images/demos/photo2.jpg' %}" alt="" class="shadow rounded-md w-full h-full object-cover">
                                               </a>
                                           </div>
                                           <div>
-                                              <a class="uk-inline" href="static/assets/images/demos/photo3.jpg" data-caption="Caption 2">
-                                                  <img src="static/assets/images/demos/photo3.jpg" alt="" class="shadow rounded-md w-full h-full object-cover">
+                                              <a class="uk-inline" href="{% static 'assets/images/demos/photo3.jpg' %}" data-caption="Caption 2">
+                                                  <img src="{% static 'assets/images/demos/photo3.jpg' %}" alt="" class="shadow rounded-md w-full h-full object-cover">
                                               </a>
                                           </div> 
                                         </div> 
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1728,8 +1730,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1766,42 +1768,42 @@
                                                 uk-scrollspy="target: > div; cls: uk-animation-scale-up; delay: 100 ;repeat: true">
                         
                                             <div class="flex items-center gap-3 p-4 bg-white shadow rounded-md dark:bg-slate-700">
-                                                <img src="static/assets/images/avatars/avatar-1.jpg" alt="" class="w-12 h-12 rounded-full shadow">
+                                                <img src="{% static 'assets/images/avatars/avatar-1.jpg' %}" alt="" class="w-12 h-12 rounded-full shadow">
                                                 <div class="flex-1"> Johm smith <span class="block text-xs font-medium dark:text-white/70"> Desinger</span></div> 
                                                 <a href="#" class="px-3 py-1 text-sm bg-gray-200 rounded-full dark:bg-slate-600"> Message</a>
                                             </div> 
                                             <div class="flex items-center gap-3 p-4 bg-white shadow rounded-md dark:bg-slate-700">
-                                                <img src="static/assets/images/avatars/avatar-3.jpg" alt="" class="w-12 h-12 rounded-full shadow">
+                                                <img src="{% static 'assets/images/avatars/avatar-3.jpg' %}" alt="" class="w-12 h-12 rounded-full shadow">
                                                 <div class="flex-1"> Johm smith <span class="block text-xs font-medium dark:text-white/70"> Desinger</span></div> 
                                                 <a href="#" class="px-3 py-1 text-sm bg-gray-200 rounded-full dark:bg-slate-600"> Message</a>
                                             </div>
                                             <div class="flex items-center gap-3 p-4 bg-white shadow rounded-md dark:bg-slate-700">
-                                                <img src="static/assets/images/avatars/avatar-4.jpg" alt="" class="w-12 h-12 rounded-full shadow">
+                                                <img src="{% static 'assets/images/avatars/avatar-4.jpg' %}" alt="" class="w-12 h-12 rounded-full shadow">
                                                 <div class="flex-1"> Johm smith <span class="block text-xs font-medium dark:text-white/70"> Desinger</span></div> 
                                                 <a href="#" class="px-3 py-1 text-sm bg-gray-200 rounded-full dark:bg-slate-600"> Message</a>
                                             </div>
                                             <div class="flex items-center gap-3 p-4 bg-white shadow rounded-md dark:bg-slate-700">
-                                                <img src="static/assets/images/avatars/avatar-5.jpg" alt="" class="w-12 h-12 rounded-full shadow">
+                                                <img src="{% static 'assets/images/avatars/avatar-5.jpg' %}" alt="" class="w-12 h-12 rounded-full shadow">
                                                 <div class="flex-1"> Johm smith <span class="block text-xs font-medium dark:text-white/70"> Desinger</span></div> 
                                                 <a href="#" class="px-3 py-1 text-sm bg-gray-200 rounded-full dark:bg-slate-600"> Message</a>
                                             </div>
                                             <div class="flex items-center gap-3 p-4 bg-white shadow rounded-md dark:bg-slate-700">
-                                                <img src="static/assets/images/avatars/avatar-1.jpg" alt="" class="w-12 h-12 rounded-full shadow">
+                                                <img src="{% static 'assets/images/avatars/avatar-1.jpg' %}" alt="" class="w-12 h-12 rounded-full shadow">
                                                 <div class="flex-1"> Johm smith <span class="block text-xs font-medium dark:text-white/70"> Desinger</span></div> 
                                                 <a href="#" class="px-3 py-1 text-sm bg-gray-200 rounded-full dark:bg-slate-600"> Message</a>
                                             </div> 
                                             <div class="flex items-center gap-3 p-4 bg-white shadow rounded-md dark:bg-slate-700">
-                                                <img src="static/assets/images/avatars/avatar-3.jpg" alt="" class="w-12 h-12 rounded-full shadow">
+                                                <img src="{% static 'assets/images/avatars/avatar-3.jpg' %}" alt="" class="w-12 h-12 rounded-full shadow">
                                                 <div class="flex-1"> Johm smith <span class="block text-xs font-medium dark:text-white/70"> Desinger</span></div> 
                                                 <a href="#" class="px-3 py-1 text-sm bg-gray-200 rounded-full dark:bg-slate-600"> Message</a>
                                             </div>
                                             <div class="flex items-center gap-3 p-4 bg-white shadow rounded-md dark:bg-slate-700">
-                                                <img src="static/assets/images/avatars/avatar-4.jpg" alt="" class="w-12 h-12 rounded-full shadow">
+                                                <img src="{% static 'assets/images/avatars/avatar-4.jpg' %}" alt="" class="w-12 h-12 rounded-full shadow">
                                                 <div class="flex-1"> Johm smith <span class="block text-xs font-medium dark:text-white/70"> Desinger</span></div> 
                                                 <a href="#" class="px-3 py-1 text-sm bg-gray-200 rounded-full dark:bg-slate-600"> Message</a>
                                             </div>
                                             <div class="flex items-center gap-3 p-4 bg-white shadow rounded-md dark:bg-slate-700">
-                                                <img src="static/assets/images/avatars/avatar-5.jpg" alt="" class="w-12 h-12 rounded-full shadow">
+                                                <img src="{% static 'assets/images/avatars/avatar-5.jpg' %}" alt="" class="w-12 h-12 rounded-full shadow">
                                                 <div class="flex-1"> Johm smith <span class="block text-xs font-medium dark:text-white/70"> Desinger</span></div> 
                                                 <a href="#" class="px-3 py-1 text-sm bg-gray-200 rounded-full dark:bg-slate-600"> Message</a>
                                             </div>
@@ -1811,8 +1813,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1872,8 +1874,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1917,19 +1919,19 @@
             
                                             <ul class="-ml-2 uk-slider-items grid-small">
                                                 <li class="w-1/4">
-                                                    <img src="static/assets/images/demos/slider1.jpg" class="rounded-md w-full h-full object-cover" alt="">
+                                                    <img src="{% static 'assets/images/demos/slider1.jpg' %}" class="rounded-md w-full h-full object-cover" alt="">
                                                 </li> 
                                                 <li class="w-1/4">
-                                                    <img src="static/assets/images/demos/slider2.jpg" class="rounded-md w-full h-full object-cover" alt="">
+                                                    <img src="{% static 'assets/images/demos/slider2.jpg' %}" class="rounded-md w-full h-full object-cover" alt="">
                                                 </li>
                                                 <li class="w-1/4">
-                                                    <img src="static/assets/images/demos/slider3.jpg" class="rounded-md w-full h-full object-cover" alt="">
+                                                    <img src="{% static 'assets/images/demos/slider3.jpg' %}" class="rounded-md w-full h-full object-cover" alt="">
                                                 </li>
                                                 <li class="w-1/4">
-                                                    <img src="static/assets/images/demos/slider4.jpg" class="rounded-md w-full h-full object-cover" alt="">
+                                                    <img src="{% static 'assets/images/demos/slider4.jpg' %}" class="rounded-md w-full h-full object-cover" alt="">
                                                 </li> 
                                                 <li class="w-1/4">
-                                                    <img src="static/assets/images/demos/slider2.jpg" class="rounded-md w-full h-full object-cover" alt="">
+                                                    <img src="{% static 'assets/images/demos/slider2.jpg' %}" class="rounded-md w-full h-full object-cover" alt="">
                                                 </li>
                                             </ul>
                                          
@@ -1944,8 +1946,8 @@
 
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -1988,19 +1990,19 @@
                                                
                                                 <ul class="-ml-2 uk-slider-items w-[calc(100%+0.5rem)]">
                                                     <li class="w-1/4 pr-2">
-                                                        <img src="static/assets/images/demos/photo1.jpg" class="rounded-md w-full h-full object-cover" alt="">
+                                                        <img src="{% static 'assets/images/demos/photo1.jpg' %}" class="rounded-md w-full h-full object-cover" alt="">
                                                     </li> 
                                                     <li class="w-1/4 pr-2">
-                                                        <img src="static/assets/images/demos/slider2.jpg" class="rounded-md w-full h-full object-cover" alt="">
+                                                        <img src="{% static 'assets/images/demos/slider2.jpg' %}" class="rounded-md w-full h-full object-cover" alt="">
                                                     </li>
                                                     <li class="w-1/4 pr-2">
-                                                        <img src="static/assets/images/demos/slider3.jpg" class="rounded-md w-full h-full object-cover" alt="">
+                                                        <img src="{% static 'assets/images/demos/slider3.jpg' %}" class="rounded-md w-full h-full object-cover" alt="">
                                                     </li>
                                                     <li class="w-1/4 pr-2">
-                                                        <img src="static/assets/images/demos/slider4.jpg" class="rounded-md w-full h-full object-cover" alt="">
+                                                        <img src="{% static 'assets/images/demos/slider4.jpg' %}" class="rounded-md w-full h-full object-cover" alt="">
                                                     </li> 
                                                     <li class="w-1/4 pr-2">
-                                                        <img src="static/assets/images/demos/slider2.jpg" class="rounded-md w-full h-full object-cover" alt="">
+                                                        <img src="{% static 'assets/images/demos/slider2.jpg' %}" class="rounded-md w-full h-full object-cover" alt="">
                                                     </li>
                                                 </ul>
                             
@@ -2018,8 +2020,8 @@
 
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -2063,13 +2065,13 @@
 
                                             <ul class="uk-slideshow-items"> 
                                                 <li class="w-full overflow-hidden rounded-md">
-                                                    <img src="static/assets/images/demos/photo1.jpg" alt="" uk-cover>
+                                                    <img src="{% static 'assets/images/demos/photo1.jpg' %}" alt="" uk-cover>
                                                 </li>
                                                 <li class="w-full overflow-hidden rounded-md">
-                                                    <img src="static/assets/images/demos/photo2.jpg" alt="" uk-cover>
+                                                    <img src="{% static 'assets/images/demos/photo2.jpg' %}" alt="" uk-cover>
                                                 </li>
                                                 <li class="w-full overflow-hidden rounded-md">
-                                                    <img src="static/assets/images/demos/photo3.jpg" alt="" uk-cover>
+                                                    <img src="{% static 'assets/images/demos/photo3.jpg' %}" alt="" uk-cover>
                                                 </li>
                                             </ul>
                             
@@ -2085,8 +2087,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -2123,13 +2125,13 @@
 
                                             <ul class="uk-slideshow-items"> 
                                                 <li class="w-full overflow-hidden rounded-md">
-                                                    <img src="static/assets/images/demos/photo1.jpg" alt="" class="rounded-md w-full h-full object-cover">
+                                                    <img src="{% static 'assets/images/demos/photo1.jpg' %}" alt="" class="rounded-md w-full h-full object-cover">
                                                 </li>
                                                 <li class="w-full overflow-hidden rounded-md">
-                                                    <img src="static/assets/images/demos/photo2.jpg" alt="" class="rounded-md w-full h-full object-cover">
+                                                    <img src="{% static 'assets/images/demos/photo2.jpg' %}" alt="" class="rounded-md w-full h-full object-cover">
                                                 </li>
                                                 <li class="w-full overflow-hidden rounded-md">
-                                                    <img src="static/assets/images/demos/photo3.jpg" alt="" class="rounded-md w-full h-full object-cover">
+                                                    <img src="{% static 'assets/images/demos/photo3.jpg' %}" alt="" class="rounded-md w-full h-full object-cover">
                                                 </li>
                                             </ul>
                                 
@@ -2144,8 +2146,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -2226,8 +2228,8 @@
 
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -2275,8 +2277,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -2326,8 +2328,8 @@
                                         
                                     </div>
 
-                                    <img src="static/assets/images/demos/beams.jpg" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
-                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
+                                    <img src="{% static 'assets/images/demos/beams.jpg' %}" alt="" class="dark:hidden absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 w-[1200px]">
+                                    <div class="absolute z-10 inset-0 bg-[url(../images/demos/grid.svg' %})] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> 
 
                                     <div class="hidden dark:inline w-full z-0 h-full absolute inset-0 bg-gradient-to-tr from-slate-900 to-slate-900 via-slate-800/70 via-60%"></div>
 
@@ -2491,73 +2493,73 @@
                 
                                                 <div class="group cursor-pointer" uk-toggle="target: #addPostImage; cls: brightness-125">
                                                     <div class="group-hover:ring-2 ring-blue-600 ring-offset-4 duration-500 rounded dark:ring-offset-slate-800">
-                                                        <img src="static/assets/images/affect.jpg" alt="" class="rounded w-full h-20 object-cover brightness-125">
+                                                        <img src="{% static 'assets/images/affect.jpg' %}" alt="" class="rounded w-full h-20 object-cover brightness-125">
                                                     </div>
                                                     <span class="block mt-2">Brightness</span>
                                                 </div>
                                                 <div class="group cursor-pointer" uk-toggle="target: #addPostImage; cls: contrast-150">
                                                     <div class="group-hover:ring-2 ring-blue-600 ring-offset-4 duration-500 rounded dark:ring-offset-slate-800">
-                                                        <img src="static/assets/images/affect.jpg" alt="" class="rounded w-full h-20 object-cover contrast-150">
+                                                        <img src="{% static 'assets/images/affect.jpg' %}" alt="" class="rounded w-full h-20 object-cover contrast-150">
                                                     </div>
                                                     <span class="block mt-2">Contrast</span>
                                                 </div>
                                                 <div class="group cursor-pointer" uk-toggle="target: #addPostImage; cls: grayscale">
                                                     <div class="group-hover:ring-2 ring-blue-600 ring-offset-4 duration-500 rounded dark:ring-offset-slate-800">
-                                                        <img src="static/assets/images/affect.jpg" alt="" class="rounded w-full h-20 object-cover grayscale">
+                                                        <img src="{% static 'assets/images/affect.jpg' %}" alt="" class="rounded w-full h-20 object-cover grayscale">
                                                     </div>
                                                     <span class="block mt-2">Grayscale</span>
                                                 </div>
                                                 <div class="group cursor-pointer" uk-toggle="target: #addPostImage; cls: hue-rotate-60">
                                                     <div class="group-hover:ring-2 ring-blue-600 ring-offset-4 duration-500 rounded dark:ring-offset-slate-800">
-                                                        <img src="static/assets/images/affect.jpg" alt="" class="rounded w-full h-20 object-cover hue-rotate-90">
+                                                        <img src="{% static 'assets/images/affect.jpg' %}" alt="" class="rounded w-full h-20 object-cover hue-rotate-90">
                                                     </div>
                                                     <span class="block mt-2">Hue</span>
                                                 </div>
                                                 <div class="group cursor-pointer" uk-toggle="target: #addPostImage; cls: invert">
                                                     <div class="group-hover:ring-2 ring-blue-600 ring-offset-4 duration-500 rounded dark:ring-offset-slate-800">
-                                                        <img src="static/assets/images/affect.jpg" alt="" class="rounded w-full h-20 object-cover invert">
+                                                        <img src="{% static 'assets/images/affect.jpg' %}" alt="" class="rounded w-full h-20 object-cover invert">
                                                     </div>
                                                     <span class="block mt-2">Invert</span>
                                                 </div>
                                                 <div class="group cursor-pointer" uk-toggle="target: #addPostImage; cls: saturate-150">
                                                     <div class="group-hover:ring-2 ring-blue-600 ring-offset-4 duration-500 rounded dark:ring-offset-slate-800">
-                                                        <img src="static/assets/images/affect.jpg" alt="" class="rounded w-full h-20 object-cover saturate-150">
+                                                        <img src="{% static 'assets/images/affect.jpg' %}" alt="" class="rounded w-full h-20 object-cover saturate-150">
                                                     </div>
                                                     <span class="block mt-2">Saturate</span>
                                                 </div>
                                                 <div class="group cursor-pointer" uk-toggle="target: #addPostImage; cls: sepia">
                                                     <div class="group-hover:ring-2 ring-blue-600 ring-offset-4 duration-500 rounded dark:ring-offset-slate-800">
-                                                        <img src="static/assets/images/affect.jpg" alt="" class="rounded w-full h-20 object-cover sepia">
+                                                        <img src="{% static 'assets/images/affect.jpg' %}" alt="" class="rounded w-full h-20 object-cover sepia">
                                                     </div>
                                                     <span class="block mt-2">Sepia</span>
                                                 </div>
                                                 <div class="group cursor-pointer" uk-toggle="target: #addPostImage; cls: brightness-125">
                                                     <div class="group-hover:ring-2 ring-blue-600 ring-offset-4 duration-500 rounded dark:ring-offset-slate-800">
-                                                        <img src="static/assets/images/affect.jpg" alt="" class="rounded w-full h-20 object-cover brightness-125">
+                                                        <img src="{% static 'assets/images/affect.jpg' %}" alt="" class="rounded w-full h-20 object-cover brightness-125">
                                                     </div>
                                                     <span class="block mt-2">Brightness</span>
                                                 </div>
                                                 <div class="group cursor-pointer" uk-toggle="target: #addPostImage; cls: grayscale">
                                                     <div class="group-hover:ring-2 ring-blue-600 ring-offset-4 duration-500 rounded dark:ring-offset-slate-800">
-                                                        <img src="static/assets/images/affect.jpg" alt="" class="rounded w-full h-20 object-cover contrast">
+                                                        <img src="{% static 'assets/images/affect.jpg' %}" alt="" class="rounded w-full h-20 object-cover contrast">
                                                     </div>
                                                     <span class="block mt-2">Contrast</span>
                                                 </div>
                                                 <div class="group cursor-pointer" uk-toggle="target: #addPostImage; cls: grayscale">
                                                     <div class="group-hover:ring-2 ring-blue-600 ring-offset-4 duration-500 rounded dark:ring-offset-slate-800">
-                                                        <img src="static/assets/images/affect.jpg" alt="" class="rounded w-full h-20 object-cover grayscale">
+                                                        <img src="{% static 'assets/images/affect.jpg' %}" alt="" class="rounded w-full h-20 object-cover grayscale">
                                                     </div>
                                                     <span class="block mt-2">Grayscale</span>
                                                 </div>
                                                 <div class="group cursor-pointer" uk-toggle="target: #addPostImage; cls: hue-rotate-60">
                                                     <div class="group-hover:ring-2 ring-blue-600 ring-offset-4 duration-500 rounded dark:ring-offset-slate-800">
-                                                        <img src="static/assets/images/affect.jpg" alt="" class="rounded w-full h-20 object-cover hue-rotate-60">
+                                                        <img src="{% static 'assets/images/affect.jpg' %}" alt="" class="rounded w-full h-20 object-cover hue-rotate-60">
                                                     </div>
                                                     <span class="block mt-2">Hue</span>
                                                 </div>
                                                 <div class="group cursor-pointer" uk-toggle="target: #addPostImage; cls: invert">
                                                     <div class="group-hover:ring-2 ring-blue-600 ring-offset-4 duration-500 rounded dark:ring-offset-slate-800">
-                                                        <img src="static/assets/images/affect.jpg" alt="" class="rounded w-full h-20 object-cover invert">
+                                                        <img src="{% static 'assets/images/affect.jpg' %}" alt="" class="rounded w-full h-20 object-cover invert">
                                                     </div>
                                                     <span class="block mt-2">Invert</span>
                                                 </div>
@@ -2670,19 +2672,19 @@
 
         
     <!-- Uikit js you can use cdn  https://getuikit.com/docs/installation  or fine the latest  https://getuikit.com/docs/installation -->
-    <script src="static/assets/js/uikit.min.js"></script>
-    <script src="static/assets/js/script.js"></script>
+    <script src="{% static 'assets/js/uikit.min.js' %}"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
 
     <!-- Ion icon -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js' %}"></script>
 
 
     <!-- Essential JavaScript Libraries
 	==============================================-->
-    <script type="text/javascript" src="static/assets/syntax-highlighter/scripts/shCore.js"></script>
-    <script type="text/javascript" src="static/assets/syntax-highlighter/scripts/shBrushJScript.js"></script>
-    <script type="text/javascript" src="static/assets/syntax-highlighter/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="{% static 'assets/syntax-highlighter/scripts/shCore.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/syntax-highlighter/scripts/shBrushJScript.js' %}"></script>
+    <script type="text/javascript" src="{% static 'assets/syntax-highlighter/scripts/shBrushXml.js' %}"></script>
     <script type="text/javascript">
         SyntaxHighlighter.all()
     </script>
